@@ -1,0 +1,38 @@
+<div class="card-form">
+    <form>
+      <!-- <div class="input one-col form-error"> -->
+      <div class="input one-col">
+        <label for="number">Número do cartão</label>
+        <input [(ngModel)]="card.number" name="number" placeholder="Número do cartão" />
+        <div class="msg-error">Número do cartão inválido</div>
+      </div>
+      <div class="input one-col">
+        <label for="name">Nome (igual do cartão)</label>
+        <input type="text" [(ngModel)]="card.name" name="name" placeholder="Nome (igual do cartão)">
+        <div class="msg-error">Nome do cartão inválido</div>
+      </div>
+      <div class="input two-cols">
+        <label for="expire">Validade</label>
+        <input type="text" [(ngModel)]="card.expire" name="expire" placeholder="Validade">
+        <div class="msg-error">Validade inválida</div>
+      </div>
+      <div class="input two-cols">
+        <label for="cvv">CVV</label>
+        <input type="text" [(ngModel)]="card.cvv" name="cvv" placeholder="CVV">
+        <div class="msg-error">CVV inválido</div>
+      </div>
+      <div class="select one-col">
+        <label for="installments">Número de parcelas</label>
+        <select name="installments">
+          <option>Número de parcelas</option>
+          <option>À vista</option>
+          <option>2x</option>
+          <option>3x</option>
+        </select>
+        <div class="msg-error">Selecione um número de parcelas</div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-primary">CONTINUAR</button>
+      </div>
+    </form>
+</div>

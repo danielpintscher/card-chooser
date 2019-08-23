@@ -1,0 +1,107 @@
+/* IMPORTS :::::::::::::::::::::::::::::::::::::::::::::::: */
+@import '../../variables.less';
+
+/* STYLING COMPONENTS ::::::::::::::::::::::::::::::::::::::: */
+.card-steps {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	left: 0;
+	color: @color-white;
+	font-size: 0;
+
+	.steps {
+		text-align: center;
+		width: 100%;
+
+		li {
+			display: inline-block;
+			counter-increment: count-step;
+
+			&.actived {
+
+				&:before {
+					content: "Etapa " counter(count-step);
+					display: inline-block;
+					text-align: center;
+					font-size: 13px;
+					font-weight: bold;
+					font-family: Arial;
+				}
+			}
+
+			&:last-child{
+				&:after {
+					font-size: 13px;
+					content:  " de 3";
+					display: inline-block;
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1000px) {
+
+	.card-steps {
+		position: absolute;
+		top: 50px;
+		left: 30%;
+		padding-left: 150px;
+		color: @color-red;
+		font-size: 13px;
+
+		.steps {
+			width: 440px;
+			text-align: right;
+
+			li {
+
+				&:after {
+					content: "";
+					display: inline-block;
+					width: 7px;
+					height: 7px;
+					transform: rotate(135deg);
+					border-top: solid 2px @color-red;
+					border-left: solid 2px @color-red;
+					margin: 0 15px;
+				}
+
+				&:before {
+					content:  counter(count-step);
+					display: inline-block;
+					width: 22px;
+					height: 22px;
+					text-align: center;
+					line-height: 22px;
+					border-radius: 100%;
+					border: solid 1px @color-red;
+					margin-right: 15px;
+				}
+
+				&:last-child {
+
+					&:after {
+						content: none;
+					}
+				}
+
+				&.actived {
+
+					&:before {
+						content: url(../../assets/icons/icon-check.svg);
+						display: inline-block;
+						text-align: center;
+						font-size: 13px;
+						font-weight: bold;
+						font-family: Arial;
+						background: @color-red;
+						line-height: 23px;
+					}
+				}
+			}
+		}
+	}
+}

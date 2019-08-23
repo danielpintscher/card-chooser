@@ -1,0 +1,94 @@
+/* IMPORTS :::::::::::::::::::::::::::::::::::::::::::::::: */
+@import '../../variables.less';
+
+/* STYLING COMPONENTS ::::::::::::::::::::::::::::::::::::::: */
+.card-form {
+	position: absolute;
+	top: 310px;
+	padding: 0 10px;
+
+	input,
+	select {
+		width: 100%;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: solid 2px @color-gray;
+		font-size: 17px;
+		padding: 5px 0;
+		color: @color-gray;
+
+		&::placeholder {
+			color: @color-gray;
+			font-size: 17px;
+		}
+	}
+
+	form {
+		display: table;
+
+		.input,
+		.select {
+			float: left;
+			padding: 0 5px;
+			margin-bottom: 10px;
+
+			label {
+				display: none;
+			}
+
+			.msg-error {
+				color: @color-red;
+				font-size: 10px;
+				margin-top: 5px;
+				display: none;
+			}
+
+			&.form-error {
+
+				input,
+				select {
+					border-bottom-color: @color-red; 
+				}
+
+				.msg-error {
+					display: block;
+				}
+			}
+		}
+
+		.form-actions {
+			float: left;
+			width: 100%;
+			margin-top: 10px;
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (min-width: 1000px) {
+
+	.card-form {
+		position: fixed;
+		top: 0;
+		left: 30%;
+		width: 70%;
+		height: 100%;
+		padding-top: 100px;
+		padding-left: 150px;
+
+		form {
+			display: table;
+			width: 440px;
+
+			.input,
+			.select {
+				margin-bottom: 60px;
+			}
+
+			.form-actions {
+				text-align: right;
+			}
+		}
+	}
+}

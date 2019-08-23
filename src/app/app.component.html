@@ -1,64 +1,9 @@
 <div class="card-chooser">
-  <div class="card-header">
-      <button class="btn-text btn-back">Alterar forma de pagamento</button>
-      <div class="card-title">
-        Adicionar um novo cartão de crédito
-      </div>
-      <div class="card-layout">
-        <div class="card card-front-inactive"></div>
-        <div class="card card-back-inactive"></div>
-        <div class="card card-front-active card-active"></div>
-        <div class="card card-back-active"></div>
-        <div class="card-front-info">
-          <div class="card-flag">Visa</div>
-          <div class="card-number">0000 0000 0000 0000</div>
-          <div class="card-name">Nome</div>
-          <div class="card-validate">00/00</div>
-        </div>
-      </div>
-  </div>
-  <div class="card-steps">
-    <ul class="steps">
-      <li>Carrinho</li>
-      <li class="actived">Pagamento</li>
-      <li>Confirmação</li>
-    </ul>
-  </div>
-  <div class="card-form">
-    <form>
-      <div class="input one-col form-error">
-        <label for="number">Número do cartão</label>
-        <input type="text" name="number" placeholder="Número do cartão">
-        <div class="msg-error">Número do cartão inválido</div>
-      </div>
-      <div class="input one-col">
-        <label for="name">Nome (igual do cartão)</label>
-        <input type="text" name="name" placeholder="Nome (igual do cartão)">
-        <div class="msg-error">Nome do cartão inválido</div>
-      </div>
-      <div class="input two-cols">
-        <label for="expire">Validade</label>
-        <input type="text" name="expire" placeholder="Validade">
-        <div class="msg-error">Validade inválida</div>
-      </div>
-      <div class="input two-cols">
-        <label for="cvv">CVV</label>
-        <input type="text" name="cvv" placeholder="CVV">
-        <div class="msg-error">CVV inválido</div>
-      </div>
-      <div class="select one-col">
-        <label for="installments">Número de parcelas</label>
-        <select name="installments">
-          <option>Número de parcelas</option>
-          <option>À vista</option>
-          <option>2x</option>
-          <option>3x</option>
-        </select>
-        <div class="msg-error">Selecione um número de parcelas</div>
-      </div>
-      <div class="form-actions">
-        <button class="btn-primary">CONTINUAR</button>
-      </div>
-    </form>
-  </div>
+
+  <app-card-header></app-card-header>
+  
+  <app-steps></app-steps>
+  
+  <app-card-form></app-card-form>
+
 </div>

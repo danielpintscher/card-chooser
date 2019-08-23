@@ -1,0 +1,18 @@
+<div class="card-header">
+  <button class="btn-text btn-back">Alterar forma de pagamento</button>
+  <div class="card-title">
+    Adicionar um novo cartão de crédito
+  </div>
+  <div class="card-layout">
+    <div class="card card-front-inactive"></div>
+    <div class="card card-back-inactive"></div>
+    <div class="card card-front-active card-active"></div>
+    <div class="card card-back-active"></div>
+    <div class="card-front-info">
+      <div class="card-flag">Visa</div>
+      <div class="card-number">{{ card.number }}</div>
+      <div class="card-name">{{ card.name }}</div>
+      <div class="card-validate">{{ card.expire }}</div>
+    </div>
+  </div>
+</div>
