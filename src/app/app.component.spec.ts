@@ -20,7 +20,7 @@ describe('AppComponent', () => {
         StepsComponent
       ],
       imports: [HttpClientTestingModule, FormsModule, TextMaskModule],
-      providers: [CardService]
+      providers: [CardService, SendCardService]
     }).compileComponents();
   }));
 
