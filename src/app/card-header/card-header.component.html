@@ -4,15 +4,16 @@
     Adicionar um novo cartão de crédito
   </div>
   <div class="card-layout">
-    <div class="card card-front-inactive"></div>
-    <div class="card card-back-inactive"></div>
-    <div class="card card-front-active card-active"></div>
-    <div class="card card-back-active"></div>
-    <div class="card-front-info">
-      <div class="card-flag">Visa</div>
-      <div class="card-number">{{ card.number }}</div>
-      <div class="card-name">{{ card.name }}</div>
-      <div class="card-validate">{{ card.expire }}</div>
+    <div class="card card-front-inactive" [ngClass]="{'card-active': !card.number && !card.cardBack}"></div>
+    <div class="card card-back-inactive" [ngClass]="{'card-active': !card.number && card.cardBack}"></div>
+    <div class="card card-front-active" [ngClass]="{'card-active': card.number && !card.cardBack}"></div>
+    <div class="card card-back-active" [ngClass]="{'card-active': card.number && card.cardBack}"></div>
+    <div class="card-front-info" [ngClass]="{'show-back': card.cardBack}">
+      <div class="card-flag" [hidden]="!card.number">
+        <img src="{{ getImageFlag(card.flag) }}" title="{{ card.flag }}"/></div>
+      <div class="card-number">{{ formatCardNumber(card.number) }}</div>
+      <div class="card-name">{{ formatCardName(card.name) }}</div>
+      <div class="card-validate">{{ formatCardExpire(card.expire) }}</div>
     </div>
   </div>
 </div>

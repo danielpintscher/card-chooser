@@ -3,7 +3,7 @@
       <!-- <div class="input one-col form-error"> -->
       <div class="input one-col">
         <label for="number">Número do cartão</label>
-        <input [(ngModel)]="card.number" name="number" placeholder="Número do cartão" />
+        <input [(ngModel)]="card.number" [textMask]="{mask: cardMask}" name="number" placeholder="Número do cartão" />
         <div class="msg-error">Número do cartão inválido</div>
       </div>
       <div class="input one-col">
@@ -18,21 +18,21 @@
       </div>
       <div class="input two-cols">
         <label for="cvv">CVV</label>
-        <input type="text" [(ngModel)]="card.cvv" name="cvv" placeholder="CVV">
+        <input type="text" (blur)="showCardBack(false)" (focus)="showCardBack(true)" [(ngModel)]="card.cvv" name="cvv" placeholder="CVV">
         <div class="msg-error">CVV inválido</div>
       </div>
       <div class="select one-col">
         <label for="installments">Número de parcelas</label>
-        <select name="installments">
+        <select [(ngModel)]="card.installments" name="installments">
           <option>Número de parcelas</option>
-          <option>À vista</option>
-          <option>2x</option>
-          <option>3x</option>
+          <option value="1x">À vista</option>
+          <option value="2x">2x</option>
+          <option value="3x">3x</option>
         </select>
         <div class="msg-error">Selecione um número de parcelas</div>
       </div>
       <div class="form-actions">
-        <button class="btn-primary">CONTINUAR</button>
+        <button class="btn-primary" (click)="addCard()">CONTINUAR</button>
       </div>
     </form>
 </div>

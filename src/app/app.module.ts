@@ -6,6 +6,8 @@ import { CardHeaderComponent } from './card-header/card-header.component';
 import { StepsComponent } from './steps/steps.component';
 import { CardFormComponent } from './card-form/card-form.component';
 import { FormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    TextMaskModule,
+    HttpClientModule
   ],
   providers: [
   ],

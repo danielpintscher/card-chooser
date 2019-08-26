@@ -9,11 +9,14 @@ export class CardService {
 	constructor() { }
 
 	card = {
-		number: 111111111111111,
-		name: 'Nome',
-		expire: '00/00',
-		cvv: 123,
-		installments: '2x'
+		flag: 'visa',
+		number: null,
+		name: '',
+		expire: '',
+		cvv: null,
+		installments: '2x',
+		cardBack: false,
+		cardAtive: false
 	}
 
 	getCard(): Card {
