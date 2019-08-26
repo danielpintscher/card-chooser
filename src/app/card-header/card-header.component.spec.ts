@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardHeaderComponent } from './card-header.component';
+import { CardHeaderComponent } from '../card-header/card-header.component';
 
 describe('CardHeaderComponent', () => {
   let component: CardHeaderComponent;
@@ -8,7 +8,9 @@ describe('CardHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardHeaderComponent ]
+      declarations: [ 
+        CardHeaderComponent
+      ]
     })
     .compileComponents();
   }));

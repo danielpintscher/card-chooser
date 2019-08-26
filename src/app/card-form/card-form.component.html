@@ -1,27 +1,27 @@
 <div class="card-form">
     <form>
       <!-- <div class="input one-col form-error"> -->
-      <div class="input one-col">
+      <div class="input-field one-col">
         <label for="number">Número do cartão</label>
         <input [(ngModel)]="card.number" [textMask]="{mask: cardMask}" name="number" placeholder="Número do cartão" />
         <div class="msg-error">Número do cartão inválido</div>
       </div>
-      <div class="input one-col">
+      <div class="input-field one-col">
         <label for="name">Nome (igual do cartão)</label>
         <input type="text" [(ngModel)]="card.name" name="name" placeholder="Nome (igual do cartão)">
         <div class="msg-error">Nome do cartão inválido</div>
       </div>
-      <div class="input two-cols">
+      <div class="input-field two-cols">
         <label for="expire">Validade</label>
         <input type="text" [(ngModel)]="card.expire" name="expire" placeholder="Validade">
         <div class="msg-error">Validade inválida</div>
       </div>
-      <div class="input two-cols">
+      <div class="input-field two-cols">
         <label for="cvv">CVV</label>
         <input type="text" (blur)="showCardBack(false)" (focus)="showCardBack(true)" [(ngModel)]="card.cvv" name="cvv" placeholder="CVV">
         <div class="msg-error">CVV inválido</div>
       </div>
-      <div class="select one-col">
+      <div class="select-field one-col">
         <label for="installments">Número de parcelas</label>
         <select [(ngModel)]="card.installments" name="installments">
           <option>Número de parcelas</option>
